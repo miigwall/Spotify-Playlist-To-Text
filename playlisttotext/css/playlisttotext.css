@@ -1,0 +1,128 @@
+body {
+	margin: 0px; padding: 0px;
+	color: #999999;
+	background: #373737;
+}
+h1, h2 {
+	margin: 0px;
+}
+h1 {
+	font-size: 17px;
+	font-weight: normal;
+	color: #ccc;
+	vertical-align: middle;
+	border-width: 0px;
+	background: url(../img/headerbg.png);
+	padding: 12px 12px 12px 27px;
+	box-shadow: 0px 0px 3px #000;
+}
+h1#header #softicon {
+	float: left;
+	margin-top: -2px;
+	margin-right: 20px;
+}
+#configuration {
+	float: right;
+	margin-top: -2px;
+	font-size: 12px;
+	font-weight: bold;
+	width: auto;
+	display: inline-block;
+	background: url(../img/dinvi_50.png);
+	color: #ddd;
+	border-width: 0px;
+	padding: 2px 10px 2px 10px;
+	cursor: pointer;
+	opacity: 0.8;
+	box-shadow: 0px 0px 1px #000;
+	margin-right: 3px;
+}
+#configuration:hover {
+	opacity: 1;
+	box-shadow: 0px 0px 2px #000 inset;
+}
+img {
+	vertical-align: middle;
+}
+table#export {
+	min-width: 260px;
+	background: #474747 url(../img/navy_blue.jpg);
+	margin: 0px;
+	margin-left: 20px;
+	margin-top: 22px;
+	width: 50%;
+	border-width: 0px;
+	border-collapse: collapse;
+	border: 1px solid #222;
+}
+td#optionsh {
+	background: #222;
+	text-align: left;
+	padding: 10px;
+	font-weight: normal;
+	font-size: 16px;
+	color: #ccc;
+	border-bottom: 1px solid #222;
+}
+td {
+	border-collapse: collapse;
+	border-width: 0px;
+	padding: 5px 10px 5px 10px;
+	color: #ccc;
+}
+td select {
+	float: right;
+	opacity: 0.5;
+	box-shadow: 0px 0px 2px #000;
+}
+td select:hover {
+	opacity: 1;
+}
+td.label {
+	width: 40%;
+}
+#main {
+	padding: 0px 20px 20px 20px;
+}
+select {
+	width: 120px;
+	border-width: 0px;
+	padding: 4px;
+	background: #ddd;
+}
+input {
+	background-color: #ddd;
+	border: 1px solid black;
+	text-align: center;
+}
+#select_all {
+	float: right;
+	cursor: pointer;
+	font-weight: normal;
+}
+#dragdrop_area {
+	display: block;
+}
+#dragdrop_area textarea#dropArea {
+	width: 99%;
+	min-height: 380px;
+	height: auto;
+	background-color: #aaa;
+	border-width: 0px;
+	overflow-y: scroll;
+	border-radius: 0px;
+	border: 1px solid #222;
+}
+p#playlistName {
+	font-weight: bold;
+	color: #82b919;
+	margin-top: 10px;
+}
+span#playlistInfos {
+	font-weight: normal;
+	color: #999999;
+}
+p#powered {
+	text-align: right;
+	font-size: 11px;
+}
