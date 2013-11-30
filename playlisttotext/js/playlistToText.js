@@ -105,6 +105,7 @@ $(document).ready(function() {
 			var fieldSep = $('#delimiter').val();
 			var escChar = $('#textQualifier').val();
 			var headerLine = $('#headerLine').val();
+			var listColumn = $('#listColumn').val();
 			var linkColumn = $('#linkColumn').val();
 			var albumColumn = $('#albumColumn').val();
 			var numberColumn = $('#numberColumn').val();
@@ -154,6 +155,10 @@ $(document).ready(function() {
 				}
 				header += "\n";
 				
+				if(listColumn == 'yes') {
+					line += "&lt;ol class=\"spotify_list\"&gt;";
+				}
+				
 				while(++i < size) {
 					var artists = tracks[i].artists;
 					var aSize = artists.length;
@@ -172,6 +177,10 @@ $(document).ready(function() {
 					$('#playlistName').append("Current playlist: " + pl.name + "<span id='playlistInfos'>&nbsp;(" + pl.length + " tracks, " + pl.subscriberCount + " subscribers)</span>");
 					
 					// ---- LINE ----
+					if(listColumn == 'yes') {
+						line += "&lt;li&gt;";
+					}
+					
 					if(numberColumn == 'yes') {
 						line += getChar(escChar)+(i+1)+". "+getChar(escChar);
 					}
@@ -205,11 +214,16 @@ $(document).ready(function() {
 					if(linkColumn == 'yes') {
 						line += "&lt;/a&gt;";
 					}
-					
-					line += "\n";
-					
+					if(listColumn == 'yes') {
+						line += "&lt;/li&gt;";
+					} else {
+						line += "\n";
+					}
 				}
-				
+				if(listColumn == 'yes') {
+					line += "&lt;/ol&gt;";
+				}
+					
 				if(headerLine == 'yes') {
 					line = header+line;
 				}
