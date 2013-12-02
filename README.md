@@ -3,7 +3,7 @@ Spotify-Playlist-To-Text
 
 Exports Spotify playlists to text (Spotify App)
 
-How to install
+How to install (Windows)
 ========================
 1. Your Spotify account must be Spotify Developer Account.<br/>
    Read more: https://developer.spotify.com/technologies/apps/
