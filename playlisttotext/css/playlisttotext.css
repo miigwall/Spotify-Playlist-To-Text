@@ -12,7 +12,7 @@ h1 {
 	color: #ccc;
 	vertical-align: middle;
 	border-width: 0px;
-	background: url(../img/headerbg.png);
+	background-image: url(../img/headerbg.png);
 	padding: 12px 12px 12px 27px;
 	box-shadow: 0px 0px 3px #000;
 }
@@ -20,6 +20,14 @@ h1#header #softicon {
 	float: left;
 	margin-top: -2px;
 	margin-right: 20px;
+}
+h1 #help_link {
+	margin-left: 20px;
+	backround-color: #fff;
+	color: #ddd;
+}
+h1 #help_link:hover {
+	color: #fff;
 }
 #configuration {
 	float: right;
@@ -45,7 +53,7 @@ img {
 	vertical-align: middle;
 }
 table#export {
-	min-width: 260px;
+	min-width: 200px;
 	background: #474747 url(../img/navy_blue.jpg);
 	margin: 0px;
 	margin-left: 20px;
@@ -71,7 +79,6 @@ td {
 	color: #ccc;
 }
 td select {
-	float: right;
 	opacity: 0.5;
 	box-shadow: 0px 0px 2px #000;
 }
@@ -95,6 +102,12 @@ input {
 	border: 1px solid black;
 	text-align: center;
 }
+input[type=checkbox] {
+	cursor: pointer;
+}
+.selector_label {
+	cursor: pointer;
+}
 #select_all {
 	float: right;
 	cursor: pointer;
@@ -108,6 +121,7 @@ input {
 	min-height: 380px;
 	height: auto;
 	background-color: #aaa;
+	background-repeat: no-repeat;
 	border-width: 0px;
 	overflow-y: scroll;
 	border-radius: 0px;
@@ -125,4 +139,7 @@ span#playlistInfos {
 p#powered {
 	text-align: right;
 	font-size: 11px;
+}
+p#powered a {
+	font-weight: bold;
 }
