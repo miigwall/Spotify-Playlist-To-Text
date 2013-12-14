@@ -16,7 +16,7 @@ How to use
 1. Open Options (Right side of the app)
 2. Change what you want to
 3. Drag&Drop any of your playlists to the textarea
-4. Copy contents anywhere you want
+4. Copy exported contents anywhere you want
 5. Repeat steps 1-4 for all of your playlists
 
 What to solve
