@@ -1,5 +1,5 @@
-Spotify Playlist to Text (1.1.0)
-================================
+Spotify Playlist to Text
+========================
 
 Exports Spotify playlists to text (Spotify App)
 
