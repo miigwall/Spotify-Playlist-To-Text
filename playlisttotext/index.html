@@ -12,93 +12,96 @@
 <script type="text/javascript" src="js/playlistToText.js"></script>
 </head>
 <body>
-<h1 id="header"><img id="softicon" src="img/export_icon_24.png"/> Export Playlist To Text <div id="configuration">Options <img src="img/icon_foldPlus.png" /></div></h1>
+<h1 id="header"><img id="softicon" src="img/export_icon_24.png"/> Export Playlist To Text 
+<div id="configuration">Options <img src="img/icon_foldPlus.png" /></div></h1>
 <div id="options_area">
 	<table id="export">
 	<tr>
-		<td id="optionsh" colspan="4">Options</th>
+		<td id="optionsh" colspan="2">Options</td>
 	</tr>
 	<tr>
-		<td class="label">Field separator</td>
-		<td><select id="delimiter">
-				<option value="59">Semicolon (;)</option>
-				<option value="58">Colon (:)</option>
-				<option value="44">Common (,)</option>
-				<option value="124">Verical line (|)</option>
-				<option value="45" selected="selected">Line (-)</option>
-				<option value="9">Tab</option>
-			</select>
+		<td class="label">
+			<div>Field separator</div>
+			<div>
+				<select id="delimiter">
+					<option value="59">Semicolon (;)</option>
+					<option value="58">Colon (:)</option>
+					<option value="44">Common (,)</option>
+					<option value="124">Verical line (|)</option>
+					<option value="45" selected="selected">Line (-)</option>
+					<option value="9">Tab</option>
+				</select>
+			</div>
 		</td>
-		<td class="label">Text qualifier</td>
-		<td><select id="textQualifier">
-				<option value="">None</option>
-				<option value="34">Quotation mark (")</option>
-				<option value="39">Apostrophe (')</option>
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">Show as HTML list</td>
-		<td><select id="listColumn">
-				<option value="yes" selected="selected">Yes</option>
-				<option value="no">No</option>
-			</select>
-		</td>
-		<td class="label">Show as HTML links</td>
-		<td><select id="linkColumn">
-				<option value="yes" selected="selected">Yes</option>
-				<option value="no">No</option>
-			</select>
+		<td class="label">
+			<div>Text qualifier</div>
+			<div>
+				<select id="textQualifier">
+					<option value="">None</option>
+					<option value="34">Quotation mark (")</option>
+					<option value="39">Apostrophe (')</option>
+				</select>
+			</div>
 		</td>
 	</tr>
 	<tr>
-		<td class="label">Show header line</td>
-		<td><select id="headerLine">
-				<option value="yes">Yes</option>
-				<option value="no" selected="selected">No</option>
-			</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="listColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML list
+			</label>
 		</td>
-		<td class="label">Show number</td>
-		<td><select id="numberColumn">
-				<option value="yes">Yes</option>
-				<option value="no" selected="selected">No</option>
-			</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="linkColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML links
+			</label>
 		</td>
 	</tr>
 	<tr>
-		<td class="label">Show album</td>
-		<td><select id="albumColumn">
-				<option value="yes">Yes</option>
-				<option value="no" selected="selected">No</option>
-			</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="headerLine" value="yes" style="-webkit-appearance: checkbox"> Show header line
+			</label>
 		</td>
-		<td class="label">Show year</td>
-		<td><select id="yearColumn">
-				<option value="yes">Yes</option>
-				<option value="no" selected="selected">No</option>
-			</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="infoRow" value="yes" style="-webkit-appearance: checkbox"> Show playlist information
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="albumColumn" value="yes" style="-webkit-appearance: checkbox"> Show album
+			</label>
+		</td>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="numberColumn" value="yes" style="-webkit-appearance: checkbox"> Show number
+			</label>
 		</td>
 	</tr>
 		<tr>
-		<td class="label">Show duration</td>
-		<td><select id="durationColumn">
-				<option value="yes">Yes</option>
-				<option value="no" selected="selected">No</option>
-			</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="durationColumn" value="yes" style="-webkit-appearance: checkbox"> Show duration
+			</label>
 		</td>
-		<td class="label">Show star</td>
-		<td><select id="starredColumn">
-				<option value="yes">Yes</option>
-				<option value="no" selected="selected">No</option>
-			</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="yearColumn" value="yes" style="-webkit-appearance: checkbox"> Show year
+			</label>
 		</td>
 	</tr>
 	<tr>
-		<td class="label">Show Spotify URL</td>
-		<td><select id="uriColumn">
-			<option value="yes">Yes</option>
-			<option value="no" selected="selected">No</option>
-		</select>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="uriColumn" value="yes" style="-webkit-appearance: checkbox"> Show Spotify URL
+			</label>
+		</td>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="starredColumn" value="yes" style="-webkit-appearance: checkbox"> Show star
+			</label>
 		</td>
 	</tr>
 	</table>
@@ -107,9 +110,9 @@
 	<a id="select_all">Select all</a>
 	<p id="playlistName">&nbsp;</p>
 	<div id="dragdrop_area">
-		<textarea id="dropArea" rows="20" readonly="readonly">Drag&Drop your playlist here...</textarea>
+		<textarea id="dropArea" rows="20" readonly="readonly"></textarea>
 	</div>
-	<p id="powered">Original code by <a href="spotify:user:scruteur">Scruteur</a>, Modifications by MjK Web Services 2013 (<a href="spotify:user:1128080852">Miigwall</a>) and export icon by <a href="http://www.aha-soft.com/">Aha-Soft</a></p>
+	<p id="powered"><a href="spotify:user:scruteur">Scruteur</a> (original code), <a href="spotify:user:1128080852">Miigwall</a> (modifications) and <a href="http://www.aha-soft.com/">Aha-Soft</a> (export icon)</p>
 </div>
 </body>
 </html>
