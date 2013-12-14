@@ -32,7 +32,7 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 Changelog
 ========================
 
-1.1.0
+1.1.0 (December 14, 2013):
 - Changed some select boxes to checkboxes
 - Some minor changes to skin
 
