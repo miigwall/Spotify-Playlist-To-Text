@@ -1,5 +1,5 @@
-Spotify-Playlist-To-Text
-========================
+Spotify Playlist to Text (1.1.0)
+================================
 
 Exports Spotify playlists to text (Spotify App)
 
@@ -28,3 +28,13 @@ Bugs
 Based to
 ========================
 http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CSV-pour-Spotify
+
+Changelog
+========================
+
+1.1.0
+- Changed some select boxes to checkboxes
+- Some minor changes to skin
+
+1.0.0:
+- First version that works
