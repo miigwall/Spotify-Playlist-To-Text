@@ -3,7 +3,7 @@
  * PlaylistToText (ExportToCSV Modification)
  * Original code by Scruteur (http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CSV-pour-Spotify)
  * Modifications by MiiG (MjK Web Services 2013)
- * Last edit: 14. December 2013
+ * Last edit: 23. November 2013
  */
 $(document).ready(function() {
 	$("#select_all").hide();
