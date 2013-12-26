@@ -21,7 +21,8 @@ How to use
 
 What to solve
 ========================
-- It uses JQuery 1.8.0. JQuery 1.10.2 doesn't works. It says that "getSpotifyAPI() not found"
+- Must update to JQuery 1.10.2 (if possible)
+- Linux Support
 
 Bugs
 ========================
