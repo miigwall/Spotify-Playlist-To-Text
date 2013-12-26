@@ -22,11 +22,11 @@ How to use
 What to solve
 ========================
 - Must update to JQuery 1.10.2 (if possible)
-- Linux Support
+- Linux Support (if possible)
 
 Bugs
 ========================
-- There are, but where...
+- Don't work when using Linux (Xubuntu and Spotify Linux Preview)
 
 Based to
 ========================
