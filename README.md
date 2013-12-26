@@ -26,7 +26,7 @@ What to solve
 
 Bugs
 ========================
-- Don't work when using Linux (Xubuntu and Spotify Linux Preview)
+- Drag&Drop not working when using Linux (Xubuntu and Spotify Linux Preview)
 
 Based to
 ========================
