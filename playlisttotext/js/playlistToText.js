@@ -2,8 +2,8 @@
 /*
  * PlaylistToText (ExportToCSV Modification)
  * Original code by Scruteur (http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CSV-pour-Spotify)
- * Modifications by MiiG (MjK Web Services 2013)
- * Last edit: 14. November 2013
+ * Modifications by MiiG
+ * Last edit: 23. November 2013
  */
 $(document).ready(function() {
 	$("#select_all").hide();
@@ -11,7 +11,7 @@ $(document).ready(function() {
 		$("#dropArea").select();
 	});
 	$("#dropArea").css({'background-image': 'url(img/spotex.png)'});
-
+	
 	var sp = getSpotifyApi();
 	var models = sp.require('$api/models');
 	var views = sp.require("$api/views");
@@ -107,6 +107,8 @@ $(document).ready(function() {
 			var escChar = $('#textQualifier').val();
 			var headerLine = $('#headerLine').prop('checked');
 			var infoRow = $('#infoRow').prop('checked');
+			var artistColumn = $('#artistColumn').prop('checked');
+			var trackColumn = $('#trackColumn').prop('checked');
 			var listColumn = $('#listColumn').prop('checked');
 			var linkColumn = $('#linkColumn').prop('checked');
 			var albumColumn = $('#albumColumn').prop('checked');
@@ -115,6 +117,7 @@ $(document).ready(function() {
 			var durationColumn = $('#durationColumn').prop('checked');
 			var starredColumn = $('#starredColumn').prop('checked');
 			var uriColumn = $('#uriColumn').prop('checked');
+			var linebreakColumn = $('#linebreakColumn').prop('checked');
 			$('#configuration').empty();
 			$('#configuration').append('Options <img src="img/icon_foldMinus.png" />');
 			$('#options_area').hide();
@@ -131,7 +134,7 @@ $(document).ready(function() {
 				var i = -1;
 				var line = '';
 				
-				// ---- HEADER LINE ----
+// Header
 				var header = "";
 				
 				if(numberColumn == true) {
@@ -163,8 +166,10 @@ $(document).ready(function() {
 				if(listColumn == true) {
 					line += "&lt;ol class=\"spotify_list\"&gt;";
 				}
-				
+		
+// Go thru all tracks		
 				while(++i < size) {
+				
 					var artists = tracks[i].artists;
 					var aSize = artists.length;
 					var artistsStr = '';
@@ -181,7 +186,7 @@ $(document).ready(function() {
 					$('#playlistName').empty();
 					$('#playlistName').append("Current playlist: " + pl.name + "<span id='playlistInfos'>&nbsp;(" + pl.length + " tracks, " + pl.subscriberCount + " subscribers)</span>");
 					
-					// ---- LINE ----
+// Playlist item
 					if(listColumn == true) {
 						line += "&lt;li&gt;";
 					}
@@ -191,10 +196,15 @@ $(document).ready(function() {
 					if(linkColumn == true) {
 						line += "&lt;a href=\""+tracks[i].uri+"\"&gt;";
 					}
-					
-					line += getChar(escChar)+escapeChar(artistsStr, escChar)+getChar(escChar)+" "+getChar(fieldSep)+" ";
-					line += getChar(escChar)+escapeChar(tracks[i].name, escChar)+getChar(escChar);		
-								
+					if(artistColumn == true) {
+						line += getChar(escChar)+escapeChar(artistsStr, escChar)+getChar(escChar);
+					}
+					if(artistColumn == true && trackColumn == true) {
+						line += " "+getChar(fieldSep)+" ";
+					}
+					if(trackColumn == true) {
+						line += getChar(escChar)+escapeChar(tracks[i].name, escChar)+getChar(escChar);		
+					}
 					if(albumColumn == true) {
 						line += getChar(fieldSep);
 						line += getChar(escChar)+escapeChar(tracks[i].album.name, escChar)+getChar(escChar);
@@ -221,7 +231,11 @@ $(document).ready(function() {
 					if(listColumn == true) {
 						line += "&lt;/li&gt;";
 					} else {
-						line += "\n";
+						if(linebreakColumn == false) {
+							line += "\n";
+						} else {
+							line += ", ";
+						}
 					}
 				}
 				if(listColumn == true) {

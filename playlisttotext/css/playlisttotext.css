@@ -58,7 +58,7 @@ table#export {
 	margin: 0px;
 	margin-left: 20px;
 	margin-top: 22px;
-	width: 50%;
+	width: 55%;
 	border-width: 0px;
 	border-collapse: collapse;
 	border: 1px solid #222;
@@ -75,8 +75,8 @@ td#optionsh {
 td {
 	border-collapse: collapse;
 	border-width: 0px;
-	padding: 5px 10px 5px 10px;
 	color: #ccc;
+	padding: 0px 0px 5px 0px;
 }
 td select {
 	opacity: 0.5;
@@ -92,10 +92,11 @@ td.label {
 	padding: 0px 20px 20px 20px;
 }
 select {
-	width: 120px;
+	width: 222px;
 	border-width: 0px;
 	padding: 4px;
 	background: #ddd;
+	cursor: pointer;
 }
 input {
 	background-color: #ddd;
@@ -107,6 +108,12 @@ input[type=checkbox] {
 }
 .selector_label {
 	cursor: pointer;
+	display: block;
+	padding: 2px 2px 2px 2px;
+	margin-left: 7px;
+}
+.selector_label:hover {
+	color: #fff;
 }
 #select_all {
 	float: right;

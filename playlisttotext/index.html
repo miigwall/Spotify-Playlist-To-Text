@@ -15,32 +15,36 @@
 <h1 id="header"><img id="softicon" src="img/export_icon_24.png"/> Export Playlist To Text 
 <div id="configuration">Options <img src="img/icon_foldPlus.png" /></div></h1>
 <div id="options_area">
-	<table id="export">
+	<table id="export" cellpadding="0" cellspacing="0">
 	<tr>
 		<td id="optionsh" colspan="2">Options</td>
 	</tr>
 	<tr>
 		<td class="label">
-			<div>Field separator</div>
-			<div>
-				<select id="delimiter">
-					<option value="59">Semicolon (;)</option>
-					<option value="58">Colon (:)</option>
-					<option value="44">Common (,)</option>
-					<option value="124">Verical line (|)</option>
-					<option value="45" selected="selected">Line (-)</option>
-					<option value="9">Tab</option>
-				</select>
+			<div class="selector_label" style="padding: 10px;">
+				<div>Field separator</div>
+				<div>
+					<select id="delimiter">
+						<option value="59">Semicolon (;)</option>
+						<option value="58">Colon (:)</option>
+						<option value="44">Common (,)</option>
+						<option value="124">Verical line (|)</option>
+						<option value="45" selected="selected">Line (-)</option>
+						<option value="9">Tab</option>
+					</select>
+				</div>
 			</div>
 		</td>
 		<td class="label">
-			<div>Text qualifier</div>
-			<div>
-				<select id="textQualifier">
-					<option value="">None</option>
-					<option value="34">Quotation mark (")</option>
-					<option value="39">Apostrophe (')</option>
-				</select>
+			<div class="selector_label" style="padding: 10px;">
+				<div>Text qualifier</div>
+				<div>
+					<select id="textQualifier">
+						<option value="">None</option>
+						<option value="34">Quotation mark (")</option>
+						<option value="39">Apostrophe (')</option>
+					</select>
+				</div>
 			</div>
 		</td>
 	</tr>
@@ -53,6 +57,18 @@
 		<td class="label">
 			<label class="selector_label">
 				<input type="checkbox" id="linkColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML links
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="artistColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show artist
+			</label>
+		</td>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="trackColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show track
 			</label>
 		</td>
 	</tr>
@@ -101,6 +117,13 @@
 		<td class="label">
 			<label class="selector_label">
 				<input type="checkbox" id="starredColumn" value="yes" style="-webkit-appearance: checkbox"> Show star
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">
+			<label class="selector_label">
+				<input type="checkbox" id="linebreakColumn" value="yes" style="-webkit-appearance: checkbox"> No linebreaks
 			</label>
 		</td>
 	</tr>
