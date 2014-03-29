@@ -19,12 +19,12 @@ How to use
 4. Copy exported contents anywhere you want
 5. Repeat steps 1-4 for all of your playlists
 
-Known issues
+TODO
 ========================
 - Must update to JQuery 1.10.2 (if possible)
 - Linux Support (if possible)
 
-Bugs
+Known issues
 ========================
 - Drag&Drop not working when using Linux (Xubuntu and Spotify Linux Preview)
 
