@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<!--
+Playlist To Text (C) Miigwall 2013-2014
+URL: https://github.com/miigwall/Spotify-Playlist-To-Text
+Original code: Scruteur
+-->
 <head>
 <meta charset="iso-8859-2">
 <title>Export Spotify Playlist To Text</title>
@@ -12,130 +17,85 @@
 <script type="text/javascript" src="js/playlistToText.js"></script>
 </head>
 <body>
-<h1 id="header"><img id="softicon" src="img/export_icon_24.png"/> Export Playlist To Text 
-<div id="configuration">Options <img src="img/icon_foldPlus.png" /></div></h1>
-<div id="options_area">
-	<table id="export" cellpadding="0" cellspacing="0">
-	<tr>
-		<td id="optionsh" colspan="2">Options</td>
-	</tr>
-	<tr>
-		<td class="label">
-			<div class="selector_label" style="padding: 10px;">
-				<div>Field separator</div>
-				<div>
-					<select id="delimiter">
-						<option value="59">Semicolon (;)</option>
-						<option value="58">Colon (:)</option>
-						<option value="44">Common (,)</option>
-						<option value="124">Verical line (|)</option>
-						<option value="45" selected="selected">Line (-)</option>
-						<option value="9">Tab</option>
-					</select>
-				</div>
+<div id="base">
+	<h1 id="header"><div style="float: left;">Playlist to text</div><div id="configuration">Options <img src="img/icon_foldPlus.png" /></div></h1>
+	<div id="options_area">
+		<div id="row_left">
+			<div class="field_label">Field separator</div>
+			<div>
+				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="59" style="-webkit-appearance: radio"> Semicolon (;)</label>
+				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="58" style="-webkit-appearance: radio"> Colon (:)</label>
+				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="44" style="-webkit-appearance: radio"> Common (,)</label>
+				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="124" style="-webkit-appearance: radio"> Verical line (|)</label>
+				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="45" style="-webkit-appearance: radio" checked> Line (-)</label>
+				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="9" style="-webkit-appearance: radio"> Tab</label>		
 			</div>
-		</td>
-		<td class="label">
-			<div class="selector_label" style="padding: 10px;">
-				<div>Text qualifier</div>
-				<div>
-					<select id="textQualifier">
-						<option value="">None</option>
-						<option value="34">Quotation mark (")</option>
-						<option value="39">Apostrophe (')</option>
-					</select>
-				</div>
+			<div class="field_label" id="h_qualifier">Text Qualifier</div>
+			<div>
+				<label class="selector_label"><input type="radio" name="textQualifier" class="textQualifier" value="" style="-webkit-appearance: radio" checked> None</label>
+				<label class="selector_label"><input type="radio" name="textQualifier" class="textQualifier" value="34" style="-webkit-appearance: radio"> Quotation mark (")</label>
+				<label class="selector_label"><input type="radio" name="textQualifier" class="textQualifier" value="39" style="-webkit-appearance: radio"> Apostrophe (')</label>
 			</div>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">
+		</div>
+		<div id="row_left">			
+			<div class="field_label">Fields</div>
+
+			<label class="selector_label">
+				<input type="checkbox" id="numberColumn" value="yes" style="-webkit-appearance: checkbox"> Number
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="artistColumn" value="yes" style="-webkit-appearance: checkbox" checked> Artist
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="trackColumn" value="yes" style="-webkit-appearance: checkbox" checked> Track
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="albumColumn" value="yes" style="-webkit-appearance: checkbox"> Album
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="yearColumn" value="yes" style="-webkit-appearance: checkbox"> Year
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="starredColumn" value="yes" style="-webkit-appearance: checkbox"> Star
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="durationColumn" value="yes" style="-webkit-appearance: checkbox"> Duration
+			</label>
+			<label class="selector_label">
+				<input type="checkbox" id="uriColumn" value="yes" style="-webkit-appearance: checkbox"> Spotify URL
+			</label>
+		
+		</div>
+		<div id="row_left">
+			<div class="field_label">Settings</div>
+				
 			<label class="selector_label">
 				<input type="checkbox" id="listColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML list
 			</label>
-		</td>
-		<td class="label">
 			<label class="selector_label">
 				<input type="checkbox" id="linkColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML links
 			</label>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="artistColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show artist
-			</label>
-		</td>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="trackColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show track
-			</label>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="headerLine" value="yes" style="-webkit-appearance: checkbox"> Show header line
-			</label>
-		</td>
-		<td class="label">
 			<label class="selector_label">
 				<input type="checkbox" id="infoRow" value="yes" style="-webkit-appearance: checkbox"> Show playlist information
-			</label>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">
+			</label>		
 			<label class="selector_label">
-				<input type="checkbox" id="albumColumn" value="yes" style="-webkit-appearance: checkbox"> Show album
-			</label>
-		</td>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="numberColumn" value="yes" style="-webkit-appearance: checkbox"> Show number
-			</label>
-		</td>
-	</tr>
-		<tr>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="durationColumn" value="yes" style="-webkit-appearance: checkbox"> Show duration
-			</label>
-		</td>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="yearColumn" value="yes" style="-webkit-appearance: checkbox"> Show year
-			</label>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="uriColumn" value="yes" style="-webkit-appearance: checkbox"> Show Spotify URL
-			</label>
-		</td>
-		<td class="label">
-			<label class="selector_label">
-				<input type="checkbox" id="starredColumn" value="yes" style="-webkit-appearance: checkbox"> Show star
-			</label>
-		</td>
-	</tr>
-	<tr>
-		<td class="label">
+				<input type="checkbox" id="headerLine" value="yes" style="-webkit-appearance: checkbox"> Show header line
+			</label>		
 			<label class="selector_label">
 				<input type="checkbox" id="linebreakColumn" value="yes" style="-webkit-appearance: checkbox"> No linebreaks
 			</label>
-		</td>
-	</tr>
-	</table>
-</div>
-<div id="main">
-	<a id="select_all">Select all</a>
-	<p id="playlistName">&nbsp;</p>
-	<div id="dragdrop_area">
-		<textarea id="dropArea" rows="20" readonly="readonly"></textarea>
+				
+		</div>
 	</div>
-	<p id="powered"><a href="spotify:user:scruteur">Scruteur</a> (original code), <a href="spotify:user:1128080852">Miigwall</a> (modifications) and <a href="http://www.aha-soft.com/">Aha-Soft</a> (export icon)</p>
+	<div id="main">
+		<div id="info_row">
+			<span id="playlistName">&nbsp;</span>
+			<a id="select_all">Select all</a>
+		</div>
+		<div id="dragdrop_area">
+			<textarea id="dropArea" rows="20" readonly="readonly"></textarea>
+		</div>
+	</div>
 </div>
 </body>
 </html>
