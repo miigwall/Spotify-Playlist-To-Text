@@ -3,6 +3,8 @@ Spotify Playlist to Text
 
 Exports Spotify playlists to text (Spotify App)
 
+<img src="preview.jpg">
+
 How to install (Windows)
 ========================
 1. Your Spotify account must be Spotify Developer Account.<br/>
@@ -34,6 +36,11 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 
 Changelog
 ========================
+
+1.3.0 (April 9, 2014)
+- Updated to Spotify's new look
+- Change: Select boxes are now radio buttons
+- Fix: Some minor bugs
 
 1.2.0 (March 28, 2014)
 - Added more options
