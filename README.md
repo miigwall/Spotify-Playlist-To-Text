@@ -21,7 +21,7 @@ How to use
 4. Copy exported contents anywhere you want
 5. Repeat steps 1-4 for all of your playlists
 
-To-do
+To do
 ========================
 - Show as Spotify Web Player links (HTML link tags)
 - Track number field is stupid.. add some options to it
@@ -42,7 +42,6 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 
 Changelog
 ========================
-
 1.3.6 (April 10, 2014)
 - Fix: Some chool fixes to UI
 
