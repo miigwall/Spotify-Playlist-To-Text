@@ -43,6 +43,9 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 Changelog
 ========================
 
+1.3.6 (April 10, 2014)
+- Fix: Some chool fixes to UI
+
 1.3.5 (April 10, 2014)
 - New: Edit generated playlist manually
 - New: Re-generate current generated playlist with different options
