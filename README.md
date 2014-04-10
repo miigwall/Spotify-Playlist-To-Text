@@ -3,7 +3,7 @@ Spotify Playlist to Text
 
 Exports Spotify playlists to text (Spotify App)
 
-<img src="preview.jpg">
+<img src="preview_1-3-6.png">
 
 How to install (Windows)
 ========================
