@@ -23,6 +23,8 @@ How to use
 
 To-do
 ========================
+- Show as Spotify Web Player links (HTML link tags)
+- Track number field is stupid.. add some options to it
 - Manual playlist selection (No Drag&Drop)
 - Automatically re-generate playlist when changing options
 - Playlist folder to text (If possible)
