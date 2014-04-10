@@ -6,6 +6,9 @@
  */
 $(document).ready(function() {
 
+// Hide checkbox
+	$(".selector_label input[type=checkbox], .selector_label input[type=radio]").css({'visibility':'hidden'});
+
 // DropArea autoheight
 	$("#dropArea").autosize();
 	$("#dropArea").attr("readonly", true);
@@ -15,6 +18,28 @@ $(document).ready(function() {
 	$("#select_all").hide();
 	$("#select_all").click(function() {
 		$("#dropArea").select();
+	});
+	
+// Interactive checkbox
+	$(".selector_label").mouseup(function() {
+	
+		var curr_status = $(this).hasClass("selector_label_checked");
+		var curr_radio_delimiter = $(this).hasClass("selector_radio_delimiter");
+		var curr_radio_qualifier = $(this).hasClass("selector_radio_qualifier");
+		
+		if(curr_radio_delimiter == true) {
+			$(".selector_radio_delimiter").removeClass("selector_label_checked");
+		}
+		if(curr_radio_qualifier == true) {
+			$(".selector_radio_qualifier").removeClass("selector_label_checked");
+		}
+		
+		if(curr_status == true) {
+			$(this).removeClass("selector_label_checked");
+		} else {
+			$(this).addClass("selector_label_checked");
+		}
+		
 	});
 	
 // Add background to drop area

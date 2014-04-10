@@ -26,18 +26,18 @@ Original code: Scruteur
 		<div id="row_left">
 			<div class="field_label">Field separator</div>
 			<div>
-				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="59" style="-webkit-appearance: radio"> Semicolon (;)</label>
-				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="58" style="-webkit-appearance: radio"> Colon (:)</label>
-				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="44" style="-webkit-appearance: radio"> Common (,)</label>
-				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="124" style="-webkit-appearance: radio"> Verical line (|)</label>
-				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="45" style="-webkit-appearance: radio" checked> Line (-)</label>
-				<label class="selector_label"><input type="radio" name="delimiter" class="delimiter" value="9" style="-webkit-appearance: radio"> Tab</label>		
+				<label class="selector_label selector_radio_delimiter"><input type="radio" name="delimiter" class="delimiter" value="59" style="-webkit-appearance: radio"> Semicolon (;)</label>
+				<label class="selector_label selector_radio_delimiter"><input type="radio" name="delimiter" class="delimiter" value="58" style="-webkit-appearance: radio"> Colon (:)</label>
+				<label class="selector_label selector_radio_delimiter"><input type="radio" name="delimiter" class="delimiter" value="44" style="-webkit-appearance: radio"> Common (,)</label>
+				<label class="selector_label selector_radio_delimiter"><input type="radio" name="delimiter" class="delimiter" value="124" style="-webkit-appearance: radio"> Verical line (|)</label>
+				<label class="selector_label selector_radio_delimiter selector_label_checked"><input type="radio" name="delimiter" class="delimiter" value="45" style="-webkit-appearance: radio" checked> Line (-)</label>
+				<label class="selector_label selector_radio_delimiter"><input type="radio" name="delimiter" class="delimiter" value="9" style="-webkit-appearance: radio"> Tab</label>		
 			</div>
 			<div class="field_label" id="h_qualifier">Text Qualifier</div>
 			<div>
-				<label class="selector_label"><input type="radio" name="textQualifier" class="textQualifier" value="" style="-webkit-appearance: radio" checked> None</label>
-				<label class="selector_label"><input type="radio" name="textQualifier" class="textQualifier" value="34" style="-webkit-appearance: radio"> Quotation mark (")</label>
-				<label class="selector_label"><input type="radio" name="textQualifier" class="textQualifier" value="39" style="-webkit-appearance: radio"> Apostrophe (')</label>
+				<label class="selector_label selector_radio_qualifier selector_label_checked"><input type="radio" name="textQualifier" class="textQualifier" value="" style="-webkit-appearance: radio" checked> None</label>
+				<label class="selector_label selector_radio_qualifier"><input type="radio" name="textQualifier" class="textQualifier" value="34" style="-webkit-appearance: radio"> Quotation mark (")</label>
+				<label class="selector_label selector_radio_qualifier"><input type="radio" name="textQualifier" class="textQualifier" value="39" style="-webkit-appearance: radio"> Apostrophe (')</label>
 			</div>
 		</div>
 		<div id="row_left">			
@@ -46,10 +46,10 @@ Original code: Scruteur
 			<label class="selector_label">
 				<input type="checkbox" id="numberColumn" value="yes" style="-webkit-appearance: checkbox"> Number
 			</label>
-			<label class="selector_label">
+			<label class="selector_label selector_label_checked">
 				<input type="checkbox" id="artistColumn" value="yes" style="-webkit-appearance: checkbox" checked> Artist
 			</label>
-			<label class="selector_label">
+			<label class="selector_label selector_label_checked">
 				<input type="checkbox" id="trackColumn" value="yes" style="-webkit-appearance: checkbox" checked> Track
 			</label>
 			<label class="selector_label">
@@ -72,10 +72,10 @@ Original code: Scruteur
 		<div id="row_left">
 			<div class="field_label">Settings</div>
 				
-			<label class="selector_label">
+			<label class="selector_label selector_label_checked">
 				<input type="checkbox" id="listColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML list
 			</label>
-			<label class="selector_label">
+			<label class="selector_label selector_label_checked">
 				<input type="checkbox" id="linkColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML links
 			</label>
 			<label class="selector_label">
