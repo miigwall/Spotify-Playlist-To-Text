@@ -5,13 +5,22 @@ Exports Spotify playlists to text (Spotify App)
 
 <img src="preview_1-3-6.png">
 
-How to install (Windows)
+How to install
 ========================
-1. Your Spotify account must be Spotify Developer Account.<br/>
+
+1. Your Spotify account must be Spotify Developer Account<br/>
    Read more: https://developer.spotify.com/technologies/apps/
-2. Download ZIP
-3. Extract folder <b>playlisttotext</b> to C:\Users\ [yourname] \My Documents\Spotify (Create folder "Spotify" if it doesn't exists)
-4. Restart Spotify and paste <b>spotify:app:playlisttotext</b> to search bar
+2. Download/Clone ZIP
+3. Extract <b>playlisttotext</b> folder to your Spotify folder
+4. Restart Spotify, type <b>spotify:app:playlisttotext</b> to search bar and press enter
+
+<b>Spotify folder on Windows:</b><br/>
+C:\Users\YOURNAME\My Documents\Spotify
+
+<b>Spotify folder on Linux:</b><br/>
+/home/YOURNAME/Documents/Spotify
+
+Create Spotify folder if it does not exists.
 
 How to use
 ========================
