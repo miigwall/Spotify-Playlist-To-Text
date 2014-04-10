@@ -23,11 +23,15 @@ How to use
 
 To-do
 ========================
+- Manual playlist selection (No Drag&Drop)
+- Automatically re-generate playlist when changing options
+- Playlist folder to text (If possible)
 - Must update to JQuery 1.10.2 (if possible)
 - Linux Support (if possible)
 
 Known issues
 ========================
+- Can't generate playlist folder to text
 - Drag&Drop not working when using Linux (Xubuntu and Spotify Linux Preview)
 
 Based to
@@ -36,6 +40,12 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 
 Changelog
 ========================
+
+1.3.5 (April 10, 2014)
+- New: Edit generated playlist manually
+- New: Re-generate current generated playlist with different options
+- Change: Duration is now human readable
+- Fix: Some minor fixes to UI
 
 1.3.0 (April 9, 2014)
 - Updated to Spotify's new look
