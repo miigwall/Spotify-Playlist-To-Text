@@ -15,11 +15,10 @@ How to install (Windows)
 
 How to use
 ========================
-1. Open Options (Right side of the app)
-2. Change what you want to
-3. Drag&Drop any of your playlists to the textarea
-4. Copy exported contents anywhere you want
-5. Repeat steps 1-4 for all of your playlists
+1. Type <b>spotify:app:playlisttotext</b> to Spotify Search Bar
+2. Change options you need
+3. Drag&Drop any of your playlists to the drop area
+4. Press Select All and copy generated playlist content
 
 To do
 ========================
