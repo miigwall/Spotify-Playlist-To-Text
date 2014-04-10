@@ -98,10 +98,7 @@ input[type=checkbox] {
 .selector_label:hover {
 	color: #fff;
 	background-color: #222;
-<<<<<<< HEAD
 	border-bottom: 1px solid #444;
-=======
->>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 }
 .selector_label_checked {
 	background: #222 url(../img/accept.png) 5px 5px no-repeat !important;
@@ -110,7 +107,6 @@ input[type=checkbox] {
 .selector_label_checked:hover {
 	background-color: #333 !important;
 	border-bottom: 1px solid #444;
-<<<<<<< HEAD
 }
 .selector_sub_group {
 	margin-left: 50px;
@@ -118,8 +114,6 @@ input[type=checkbox] {
 .selector_sub_group .selector_label {
 	border-left: 1px solid #333;
 	border-bottom: none !important;
-=======
->>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 }
 #dragdrop_area {
 	display: block;
