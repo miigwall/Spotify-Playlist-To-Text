@@ -14,11 +14,14 @@ Original code: Scruteur
 <link rel="stylesheet" type="text/css" href="sp://resources/css/list.css">
 <link rel="stylesheet" type="text/css" href="css/playlisttotext.css">
 <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.autosize.min.js"></script>
 <script type="text/javascript" src="js/playlistToText.js"></script>
 </head>
 <body>
 <div id="base">
-	<h1 id="header"><div style="float: left;">Playlist to text</div><div id="configuration">Options <img src="img/icon_foldPlus.png" /></div></h1>
+	<input type="hidden" name="current_playlist_uri" id="current_playlist_uri" value="" />
+	<input type="hidden" name="current_playlist_url" id="current_playlist_url" value="" />
+	<h1 id="header"><div style="float: left;">Playlist to text</div><div id="configuration">Options <img src="img/icon_foldPlus.png" /></div><a id="select_all">Select all</a></h1>
 	<div id="options_area">
 		<div id="row_left">
 			<div class="field_label">Field separator</div>
@@ -84,16 +87,17 @@ Original code: Scruteur
 			<label class="selector_label">
 				<input type="checkbox" id="linebreakColumn" value="yes" style="-webkit-appearance: checkbox"> No linebreaks
 			</label>
-				
+			
+			<a id="update">Re-generate current playlist</a>
+			
 		</div>
 	</div>
 	<div id="main">
 		<div id="info_row">
 			<span id="playlistName">&nbsp;</span>
-			<a id="select_all">Select all</a>
 		</div>
 		<div id="dragdrop_area">
-			<textarea id="dropArea" rows="20" readonly="readonly"></textarea>
+			<textarea id="dropArea"></textarea>
 		</div>
 	</div>
 </div>

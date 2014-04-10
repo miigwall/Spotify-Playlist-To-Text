@@ -6,11 +6,19 @@
  */
 $(document).ready(function() {
 
+// DropArea autoheight
+	$("#dropArea").autosize();
+	$("#dropArea").attr("readonly", true);
+
 // Select exported content
+	$("#update").hide();
 	$("#select_all").hide();
 	$("#select_all").click(function() {
 		$("#dropArea").select();
 	});
+	
+// Add background to drop area
+	$("#dropArea").css({ 'background' : '#222 url(img/dragdrop_text.png) 40px 25px no-repeat' });
 
 	var sp = getSpotifyApi();
 	var models = sp.require('$api/models');
@@ -58,49 +66,17 @@ $(document).ready(function() {
 		return tOut;
 	}
 	
-	$("#configuration").live("click", function(){
-		if($("#options_area").css("display") == "none") {
-			$("#options_area").show("fast","linear");
-			$('#configuration').empty();
-			$('#configuration').append('Options <img src="img/icon_foldPlus.png" />');
-		}
-		else {
-			$("#options_area").hide("fast","linear");
-			$('#configuration').empty();
-			$('#configuration').append('Options <img src="img/icon_foldMinus.png" />');
-		}
-	});
+// http://stackoverflow.com/questions/8211744/convert-milliseconds-or-seconds-into-human-readable-form
+	function millisecondsToString(milliseconds) {
+		var seconds = milliseconds/1000;
+// var numhours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+		var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+		var numseconds = (((seconds % 31536000) % 86400) % 3600) % 60;
+		return numminutes+" minutes "+numseconds+" seconds";
+	}
 	
-	var drop = document.querySelector('#dropArea');
-
-	drop.addEventListener('dragstart', function(e){
-	e.dataTransfer.setData('text/html', this.innerHTML);
-	e.dataTransfer.effectAllowed = 'copy';
-	}, false);
-
-	drop.addEventListener('dragenter', function(e){
-	e.preventDefault();
-	e.dataTransfer.dropEffect = 'copy';
-	this.classList.add('over');
-	}, false);
-
-	drop.addEventListener('dragover', function(e){
-	e.preventDefault();
-	e.dataTransfer.dropEffect = 'copy';
-	return false;
-	}, false);
-
-	drop.addEventListener('dragleave', function(e){
-	e.preventDefault();
-	this.classList.remove('over');
-	}, false);
-
-	drop.addEventListener('drop', function(e) {
-		e.preventDefault();
-		this.classList.remove('over');
-		var url = e.dataTransfer.getData('Text');
-		var uri = getPlaylistURI(url);
-		
+// Playlist main generation
+	function generatePlaylistToText(url, uri) {
 		var fieldSep = $('.delimiter:checked').val();
 		var escChar = $('.textQualifier:checked').val();
 		var headerLine = $('#headerLine').prop('checked');
@@ -116,9 +92,11 @@ $(document).ready(function() {
 		var starredColumn = $('#starredColumn').prop('checked');
 		var uriColumn = $('#uriColumn').prop('checked');
 		var linebreakColumn = $('#linebreakColumn').prop('checked');
+		
 		$('#configuration').empty();
 		$('#configuration').append('Options <img src="img/icon_foldMinus.png" />');
 		$('#options_area').hide();
+		$("#update").show();
 		$("#select_all").show();
 		$('#dropArea').empty();
 		
@@ -127,16 +105,17 @@ $(document).ready(function() {
 		});
 
 		if (pl != null) {
+		
 			var tracks = pl.tracks;
 			var size = tracks.length;
 			var i = -1;
 			var line = '';
 			
-	// Header
+// Header
 			var header = "";
 			
 			if(numberColumn == true) {
-				header += getChar(escChar)+"X. "+getChar(escChar)+getChar(fieldSep);
+				header += getChar(escChar)+"X"+getChar(escChar)+getChar(fieldSep);
 			}
 			
 			header += getChar(escChar)+"TRACK"+getChar(escChar)+getChar(fieldSep)+getChar(escChar)+"ARTIST"+getChar(escChar);
@@ -165,26 +144,26 @@ $(document).ready(function() {
 				line += "&lt;ol class=\"spotify_list\"&gt;";
 			}
 
-	// Go thru all tracks		
+// Go thru all tracks		
 			while(++i < size) {
-			
 				var artists = tracks[i].artists;
 				var aSize = artists.length;
 				var artistsStr = '';
 				var j = -1;
+				
 				if (aSize > 1) {
 					while(++j < aSize) {
 						artistsStr += artists[j] + ', ';
 					}
 					artistsStr = artistsStr.slice(0, -2);
-				}
-				else {
+				} else {
 					artistsStr = artists[0];
 				}
-				$('#playlistName').empty();
-				$('#playlistName').append("Current playlist: " + pl.name + "<span id='playlistInfos'>&nbsp;(" + pl.length + " tracks, " + pl.subscriberCount + " subscribers)</span>");
 				
-	// Playlist item
+				$('#playlistName').empty();
+				$('#playlistName').append(pl.name + "<span id='playlistInfos'>&nbsp;(" + pl.length + " tracks, " + pl.subscriberCount + " subscribers)</span>");
+				
+// Playlist fields
 				if(listColumn == true) {
 					line += "&lt;li&gt;";
 				}
@@ -208,8 +187,9 @@ $(document).ready(function() {
 					line += getChar(escChar)+escapeChar(tracks[i].album.name, escChar)+getChar(escChar);
 				}
 				if(durationColumn == true) {
+					var duration = millisecondsToString(tracks[i].duration);
 					line += getChar(fieldSep);
-					line += getChar(escChar)+tracks[i].duration+getChar(escChar);
+					line += getChar(escChar)+duration+getChar(escChar);
 				}
 				if(yearColumn == true) {
 					line += getChar(fieldSep);
@@ -228,7 +208,9 @@ $(document).ready(function() {
 				}
 				if(listColumn == true) {
 					line += "&lt;/li&gt;";
+					
 				} else {
+				
 					if(linebreakColumn == false) {
 						line += "\n";
 					} else {
@@ -242,7 +224,95 @@ $(document).ready(function() {
 			if(headerLine == true) {
 				line = header+line;
 			}
-			$('#dropArea').append(line);
+			
+			return line;
 		}
+	}
+	
+	$("#configuration").live("click", function(){
+		if($("#options_area").css("display") == "none") {
+			$("#options_area").show("fast","linear");
+			$('#configuration').empty();
+			$('#configuration').append('Options <img src="img/icon_foldPlus.png" />');
+		}
+		else {
+			$("#options_area").hide("fast","linear");
+			$('#configuration').empty();
+			$('#configuration').append('Options <img src="img/icon_foldMinus.png" />');
+		}
+	});
+	
+	var drop = document.querySelector('#dropArea');
+
+	drop.addEventListener(
+		'dragstart'
+		,function(e) {
+			e.dataTransfer.setData('text/html', this.innerHTML);
+			e.dataTransfer.effectAllowed = 'copy';
+			$("#dropArea").attr("readonly", true);
+			$("#dropArea").css({ 'background' : '#333' });
+		}
+		,false
+	);
+
+	drop.addEventListener(
+		'dragenter'
+		,function(e) {
+			e.preventDefault();
+			e.dataTransfer.dropEffect = 'copy';
+			this.classList.add('over');
+			$("#dropArea").attr("readonly", true);
+			$("#dropArea").css({ 'background' : '#333' });
+		}
+		,false
+	);
+
+	drop.addEventListener(
+		'dragover'
+		,function(e) {
+			e.preventDefault();
+			e.dataTransfer.dropEffect = 'copy';
+			$("#dropArea").attr("readonly", true);
+			$("#dropArea").css({ 'background' : '#333' });
+			return false;
+		}
+		,false
+	);
+
+	drop.addEventListener(
+		'dragleave'
+		,function(e) {
+			e.preventDefault();
+			this.classList.remove('over');
+		}
+		,false
+	);
+
+	drop.addEventListener('drop', function(e) {
+		e.preventDefault();
+		
+		this.classList.remove('over');
+		var url = e.dataTransfer.getData('Text');
+		var uri = getPlaylistURI(url);
+		
+		$("#current_playlist_url").val(url);
+		$("#current_playlist_uri").val(uri);
+		
+		$('#dropArea').append(generatePlaylistToText(url, uri));
+		
+// Autosize DropArea
+		$("#dropArea").attr("readonly", false);
+		$("#dropArea").trigger('autosize.resize');
+		
 	}, false);
+	
+// Update
+	$("#base").on("click", "#update", function() {
+		var url = $("#current_playlist_url").val();
+		var uri = $("#current_playlist_uri").val();
+		$("#dropArea").append(generatePlaylistToText(url, uri));
+		$("#dropArea").trigger('autosize.resize');
+		$("#dropArea").attr("readonly", false);
+		
+	});
 });

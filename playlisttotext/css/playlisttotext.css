@@ -20,7 +20,7 @@ h1 {
 	height: 50px;
 	margin-top: 15px;
 }
-#configuration {
+#configuration, #select_all, #update {
 	float: left;
 	margin-top: -2px;
 	font-size: 12px;
@@ -36,14 +36,21 @@ h1 {
 	box-shadow: 0px 0px 1px #000;
 	margin-left: 23px;
 }
+#update {
+	margin: 35px 0px 0px 55px;
+}
 #configuration:hover {
 	opacity: 1;
 	background: #444;
 }
+#select_all:hover, #update:hover {
+	background: #444;
+	color: #eee;
+	text-decoration: none;
+}
 img {
 	vertical-align: middle;
 }
-
 #row_left, #row_right {
 	float: left;
 	min-width: 300px;
@@ -58,7 +65,6 @@ img {
 	float: left;
 	margin-right: 10px;
 }
-
 .field_label {
 	margin-bottom: 1px;
 	padding: 5px 5px 5px 15px;
@@ -68,7 +74,6 @@ img {
 #h_qualifier {
 	margin-top: 10px;
 }
-
 select {
 	width: 222px;
 	border-width: 0px;
@@ -99,42 +104,30 @@ input[type=checkbox] {
 }
 #dragdrop_area textarea#dropArea {
 	width: 98%;
-	min-height: 380px;
+	min-height: 180px;
 	height: auto;
 	color: #ddd;
 	background-color: #222;
 	border-width: 0px;
 	overflow-y: auto;
 	border-radius: 0px;
-	font-size: 14px;
+	font-size: 16px;
 	padding: 10px;
+	line-height: 25px;
 }
 #info_row {
-	height: 18px;
+	height: 38px;
 	clear: both;
 }
 #info_row span#playlistName {
 	font-weight: bold;
 	font-family: Segoe UI Semilight, Helvetica, Arial;
 	color: #82b919;
-	font-size: 16px;
+	font-size: 20px;
 	float: left;
 	margin-top: 10px;
 }
 span#playlistInfos {
 	font-weight: normal;
 	color: #999999;
-}
-#select_all {
-	float: left;
-	margin-left: 15px;
-	cursor: pointer;
-	font-weight: normal;
-	padding: 10px;
-	background: #333;
-}
-#select_all:hover {
-	background: #444;
-	color: #eee;
-	text-decoration: none;
 }
