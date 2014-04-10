@@ -1,7 +1,11 @@
 {
 	"BundleType": "Application",
 	"BundleIdentifier": "playlisttotext",
+<<<<<<< HEAD
 	"BundleVersion": "1.3.7",
+=======
+	"BundleVersion": "1.3.6",
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 	"AppIcon": {
 		"18x18": "img/export_icon_18.png",
 		"64x64": "img/export_icon_64.png",

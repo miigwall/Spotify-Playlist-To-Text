@@ -6,15 +6,26 @@
  */
 $(document).ready(function() {
 
+<<<<<<< HEAD
 // Hide elements
 	$(".selector_label input[type=checkbox], .selector_label input[type=radio]").css({'visibility':'hidden'});
 	$("#number_style_group, #duration_style_group, #select_all, #update").hide();
 	
+=======
+// Hide checkbox
+	$(".selector_label input[type=checkbox], .selector_label input[type=radio]").css({'visibility':'hidden'});
+
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 // DropArea autoheight
 	$("#dropArea").autosize();
 	$("#dropArea").attr("readonly", true);
 
 // Select exported content
+<<<<<<< HEAD
+=======
+	$("#update").hide();
+	$("#select_all").hide();
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 	$("#select_all").click(function() {
 		$("#dropArea").select();
 	});
@@ -25,6 +36,7 @@ $(document).ready(function() {
 		var curr_status = $(this).hasClass("selector_label_checked");
 		var curr_radio_delimiter = $(this).hasClass("selector_radio_delimiter");
 		var curr_radio_qualifier = $(this).hasClass("selector_radio_qualifier");
+<<<<<<< HEAD
 		var curr_radio_numberstyle = $(this).hasClass("selector_radio_numberstyle");
 		var curr_radio_durationstyle = $(this).hasClass("selector_radio_durationstyle");
 		
@@ -48,6 +60,17 @@ $(document).ready(function() {
 		}	
 		
 		if(remove_check == true && curr_status == true) {
+=======
+		
+		if(curr_radio_delimiter == true) {
+			$(".selector_radio_delimiter").removeClass("selector_label_checked");
+		}
+		if(curr_radio_qualifier == true) {
+			$(".selector_radio_qualifier").removeClass("selector_label_checked");
+		}
+		
+		if(curr_status == true) {
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 			$(this).removeClass("selector_label_checked");
 		} else {
 			$(this).addClass("selector_label_checked");
@@ -55,6 +78,7 @@ $(document).ready(function() {
 		
 	});
 	
+<<<<<<< HEAD
 	$("#numberColumn").click(function() {
 		$("#number_style_group").toggle();
 	});
@@ -62,6 +86,8 @@ $(document).ready(function() {
 		$("#duration_style_group").toggle();
 	});
 	
+=======
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 // Add background to drop area
 	$("#dropArea").css({ 'background' : '#222 url(img/dragdrop_text.png) 40px 25px no-repeat' });
 
@@ -115,6 +141,7 @@ $(document).ready(function() {
 	}
 	
 // http://stackoverflow.com/questions/8211744/convert-milliseconds-or-seconds-into-human-readable-form
+<<<<<<< HEAD
 	function millisecondsToString(milliseconds, style) {
 // Styles A: X:YY, B: X minutes Y seconds, C: Xm Ys, D: X,YYm, E: YYY seconds, F: ZZZms
 
@@ -136,6 +163,14 @@ $(document).ready(function() {
 		} else if(style=="F") {
 			return milliseconds+"ms";
 		}
+=======
+	function millisecondsToString(milliseconds) {
+		var seconds = milliseconds/1000;
+// var numhours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+		var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+		var numseconds = (((seconds % 31536000) % 86400) % 3600) % 60;
+		return numminutes+" minutes "+numseconds+" seconds";
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 	}
 	
 // Playlist main generation
@@ -158,7 +193,11 @@ $(document).ready(function() {
 		var uriColumn = $('#uriColumn').prop('checked');
 		var weburiColumn = $("#weburiColumn").prop('checked');
 		var linebreakColumn = $('#linebreakColumn').prop('checked');
+<<<<<<< HEAD
 // Prehide		
+=======
+		
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 		$('#configuration').empty();
 		$('#configuration').append('Options <img src="img/icon_foldMinus.png" />');
 		$('#options_area').hide();
@@ -171,10 +210,15 @@ $(document).ready(function() {
 		});
 // If we have a playlist
 		if (pl != null) {
+		
 			var tracks = pl.tracks;
 			var size = tracks.length;
 			var i = -1;
 			var line = '';
+<<<<<<< HEAD
+=======
+			
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 // Header
 			var header = "";
 // Get number style to header
@@ -188,10 +232,14 @@ $(document).ready(function() {
 			}
 // How we show number on header
 			if(numberColumn == true) {
+<<<<<<< HEAD
 				header += getChar(escChar)+"X"+header_number_endfix+getChar(escChar);
 				if(numberStyleColumn=="Z") {
 					header += getChar(fieldSep);
 				}
+=======
+				header += getChar(escChar)+"X"+getChar(escChar)+getChar(fieldSep);
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 			}
 // Rest of the header		
 			header += getChar(escChar)+"TRACK"+getChar(escChar)+getChar(fieldSep)+getChar(escChar)+"ARTIST"+getChar(escChar);
@@ -230,6 +278,7 @@ $(document).ready(function() {
 				var aSize = artists.length;
 				var artistsStr = '';
 				var j = -1;
+				
 				if (aSize > 1) {
 					while(++j < aSize) {
 						artistsStr += artists[j] + ', ';
@@ -238,9 +287,16 @@ $(document).ready(function() {
 				} else {
 					artistsStr = artists[0];
 				}
+<<<<<<< HEAD
 				
 				$('#playlistName').empty();
 				$('#playlistName').append(pl.name + "<span id='playlistInfos'>&nbsp;(" + pl.length + " tracks, " + pl.subscriberCount + " subscribers)</span>");
+=======
+				
+				$('#playlistName').empty();
+				$('#playlistName').append(pl.name + "<span id='playlistInfos'>&nbsp;(" + pl.length + " tracks, " + pl.subscriberCount + " subscribers)</span>");
+				
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 // Playlist fields
 				if(listColumn == true) {
 					line += "&lt;li&gt;";
@@ -268,7 +324,11 @@ $(document).ready(function() {
 					line += getChar(escChar)+escapeChar(tracks[i].album.name, escChar)+getChar(escChar);
 				}
 				if(durationColumn == true) {
+<<<<<<< HEAD
 					var duration = millisecondsToString(tracks[i].duration, durationStyleColumn);
+=======
+					var duration = millisecondsToString(tracks[i].duration);
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 					line += getChar(fieldSep);
 					line += getChar(escChar)+duration+getChar(escChar);
 				}
@@ -296,6 +356,7 @@ $(document).ready(function() {
 				}
 				if(listColumn == true) {
 					line += "&lt;/li&gt;";
+					
 				} else {
 				
 					if(linebreakColumn == false) {
@@ -313,6 +374,7 @@ $(document).ready(function() {
 			}
 			
 			return line;
+<<<<<<< HEAD
 		}
 	}
 	
@@ -363,6 +425,58 @@ $(document).ready(function() {
 			$("#dropArea").css({ 'background' : '#333' });
 			return false;
 		}
+=======
+		}
+	}
+	
+	$("#configuration").live("click", function(){
+		if($("#options_area").css("display") == "none") {
+			$("#options_area").show("fast","linear");
+			$('#configuration').empty();
+			$('#configuration').append('Options <img src="img/icon_foldPlus.png" />');
+		}
+		else {
+			$("#options_area").hide("fast","linear");
+			$('#configuration').empty();
+			$('#configuration').append('Options <img src="img/icon_foldMinus.png" />');
+		}
+	});
+	
+	var drop = document.querySelector('#dropArea');
+
+	drop.addEventListener(
+		'dragstart'
+		,function(e) {
+			e.dataTransfer.setData('text/html', this.innerHTML);
+			e.dataTransfer.effectAllowed = 'copy';
+			$("#dropArea").attr("readonly", true);
+			$("#dropArea").css({ 'background' : '#333' });
+		}
+		,false
+	);
+
+	drop.addEventListener(
+		'dragenter'
+		,function(e) {
+			e.preventDefault();
+			e.dataTransfer.dropEffect = 'copy';
+			this.classList.add('over');
+			$("#dropArea").attr("readonly", true);
+			$("#dropArea").css({ 'background' : '#333' });
+		}
+		,false
+	);
+
+	drop.addEventListener(
+		'dragover'
+		,function(e) {
+			e.preventDefault();
+			e.dataTransfer.dropEffect = 'copy';
+			$("#dropArea").attr("readonly", true);
+			$("#dropArea").css({ 'background' : '#333' });
+			return false;
+		}
+>>>>>>> b0625d93d9c222b6bc05be318f1b61bd0063dad7
 		,false
 	);
 
