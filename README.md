@@ -31,17 +31,14 @@ How to use
 
 To do
 ========================
-- Show as Spotify Web Player links (HTML link tags)
-- Track number field is stupid.. add some options to it
 - Manual playlist selection (No Drag&Drop)
 - Automatically re-generate playlist when changing options
-- Playlist folder to text (If possible)
-- Must update to JQuery 1.10.2 (if possible)
-- Linux Support (if possible)
+- Playlist folder to text (if possible)
+- JQuery and Spotify API Update (if possible)
+- Support for Linux (if possible)
 
 Known issues
 ========================
-- Can't generate playlist folder to text
 - Drag&Drop not working when using Linux (Xubuntu and Spotify Linux Preview)
 
 Based to
