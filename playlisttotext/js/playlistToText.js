@@ -301,7 +301,10 @@ $(document).ready(function() {
 					if(linebreakColumn == false) {
 						line += "\n";
 					} else {
-						line += ", ";
+					
+						if(tracks[i+1] != null) {
+							line += ", ";
+						}
 					}
 				}
 			}
