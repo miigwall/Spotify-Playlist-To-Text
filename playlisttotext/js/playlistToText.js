@@ -247,7 +247,7 @@ $(document).ready(function() {
 				}
 				if(numberColumn == true) {
 					line += getChar(escChar)+(i+1)+header_number_endfix+getChar(escChar);
-					if(numberStyleColumn=="Z") {
+					if(numberStyleColumn=="Z" && (artistColumn == true || trackColumn == true)) {
 						line += getChar(fieldSep);
 					}
 				}
