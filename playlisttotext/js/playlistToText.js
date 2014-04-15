@@ -1,9 +1,13 @@
 "use strict";
-/* Playlist To Text
+
+/* 
+ * Spotify Playlist To Text
+ *
  * Original code by Scruteur
- * Modifications by MiiG
+ * Modified by MiiG
  *
  */
+ 
 $(document).ready(function() {
 
 // Hide elements
@@ -27,6 +31,7 @@ $(document).ready(function() {
 		var curr_radio_qualifier = $(this).hasClass("selector_radio_qualifier");
 		var curr_radio_numberstyle = $(this).hasClass("selector_radio_numberstyle");
 		var curr_radio_durationstyle = $(this).hasClass("selector_radio_durationstyle");
+		var curr_radio_htmllinkstyle = $(this).hasClass("selector_radio_htmllinkstyle");
 		
 		var remove_check = true;
 		
@@ -46,6 +51,10 @@ $(document).ready(function() {
 			$(".selector_radio_durationstyle").removeClass("selector_label_checked");
 			remove_check = false;
 		}	
+		if(curr_radio_htmllinkstyle == true) {
+			$(".selector_radio_htmllinkstyle").removeClass("selector_label_checked");
+			remove_check = false;
+		}	
 		
 		if(remove_check == true && curr_status == true) {
 			$(this).removeClass("selector_label_checked");
@@ -54,17 +63,22 @@ $(document).ready(function() {
 		}
 		
 	});
-	
+
+// Toggle sub options	
 	$("#numberColumn").click(function() {
 		$("#number_style_group").toggle();
 	});
 	$("#durationColumn").click(function() {
 		$("#duration_style_group").toggle();
 	});
-	
+	$("#linkColumn").click(function() {
+		$("#htmllink_style_group").toggle();
+	});
+
 // Add background to drop area
 	$("#dropArea").css({ 'background' : '#222 url(img/dragdrop_text.png) 40px 25px no-repeat' });
 
+// Spotify API
 	var sp = getSpotifyApi();
 	var models = sp.require('$api/models');
 	var views = sp.require("$api/views");
@@ -154,6 +168,7 @@ $(document).ready(function() {
 		var trackColumn = $('#trackColumn').prop('checked');
 		var listColumn = $('#listColumn').prop('checked');
 		var linkColumn = $('#linkColumn').prop('checked');
+		var htmllinkStyleColumn = $('.htmllinkStyleColumn:checked').val();
 		var albumColumn = $('#albumColumn').prop('checked');
 		var numberColumn = $('#numberColumn').prop('checked');
 		var numberStyleColumn = $('.numberStyleColumn:checked').val();
@@ -258,7 +273,11 @@ $(document).ready(function() {
 					}
 				}
 				if(linkColumn == true) {
-					line += "&lt;a href=\""+tracks[i].uri+"\"&gt;";
+					var weburl = tracks[i].uri;
+					if(htmllinkStyleColumn=="B") {
+						weburl = weburl.replace("spotify:track:", "http://open.spotify.com/track/");
+					}
+					line += "&lt;a href=\""+weburl+"\"&gt;";
 				}
 				if(artistColumn == true) {
 					line += getChar(escChar)+escapeChar(artistsStr, escChar)+getChar(escChar);

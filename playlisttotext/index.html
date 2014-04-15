@@ -121,8 +121,18 @@ Original code: Scruteur
 				<input type="checkbox" id="listColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML list
 			</label>
 			<label class="selector_label selector_label_checked">
-				<input type="checkbox" id="linkColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML links
+				<input type="checkbox" id="linkColumn" value="yes" style="-webkit-appearance: checkbox" checked> Show as HTML links and use...
 			</label>
+	
+			<div class="selector_sub_group" id="htmllink_style_group">
+				<label class="selector_label selector_radio_htmllinkstyle selector_label_checked">
+					<input type="radio" name="htmllinkStyleColumn" class="htmllinkStyleColumn" value="A" style="-webkit-appearance: radio" checked> Spotify URLs
+				</label>
+				<label class="selector_label selector_radio_htmllinkstyle">
+					<input type="radio" name="htmllinkStyleColumn" class="htmllinkStyleColumn" value="B" style="-webkit-appearance: radio"> Spotify Web Player URLs
+				</label>
+			</div>
+
 			<label class="selector_label">
 				<input type="checkbox" id="infoRow" value="yes" style="-webkit-appearance: checkbox"> Show playlist information
 			</label>		
