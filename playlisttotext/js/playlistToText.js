@@ -79,6 +79,12 @@ $(document).ready(function() {
 		if (num != "") {
 			charSt = String.fromCharCode(num);
 		}
+		
+// Add space if needed
+		var spacebarColumn = $('#spacebarColumn').prop('checked');
+		if(spacebarColumn==false) {
+			charSt = ' '+charSt+' ';
+		}
 		return charSt;
 	}
 
