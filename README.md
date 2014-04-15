@@ -47,6 +47,9 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 
 Changelog
 ========================
+1.3.8 (April 15, 2014)
+- New: No spaces option
+
 1.3.7 (April 10, 2014)
 - New: More options to number and duration options
 - New: Spotify Wep Player URL option
