@@ -53,7 +53,7 @@ img {
 }
 #row_left, #row_right {
 	float: left;
-	min-width: 300px;
+	min-width: 260px;
 	margin-bottom: 20px;
 }
 #row_left {

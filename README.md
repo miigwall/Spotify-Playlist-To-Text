@@ -47,6 +47,9 @@ http://blog.geted.info/index.php?post/2012/08/10/Export-de-playlist-au-format-CS
 
 Changelog
 ========================
+1.4.0 (May 3, 2014)
+- Fix: Changed option box width
+
 1.3.9 (April 15, 2014)
 - New: Added html link option
 
