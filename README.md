@@ -19,8 +19,9 @@ C:\Users\YOURNAME\My Documents\Spotify
 
 <b>Spotify folder on Linux:</b><br/>
 /home/YOURNAME/Documents/Spotify
+Drag & Drop is not working properly!
 
-<b>Spototify folder on Linux (WINE):</b><br/>
+<b>Spotify folder on Linux (WINE):</b><br/>
 Ex.: /home/YOURNAME/.wine/dosdevices/c:/users/YOURNAME/My Documents/Spotify/<br/>
 You may want to use WINE's "Browse C: Drive" option.
 
