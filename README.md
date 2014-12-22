@@ -18,10 +18,11 @@ How to install
 C:\Users\YOURNAME\My Documents\Spotify
 
 <b>Spotify folder on Linux:</b><br/>
-/home/YOURNAME/Documents/Spotify
-Drag & Drop is not working properly!
+/home/YOURNAME/Documents/Spotify<br/>
+Drag & Drop may not work!
 
 <b>Spotify folder on Linux (WINE):</b><br/>
+https://www.winehq.org/<br/>
 Ex.: /home/YOURNAME/.wine/dosdevices/c:/users/YOURNAME/My Documents/Spotify/<br/>
 You may want to use WINE's "Browse C: Drive" option.
 
@@ -31,7 +32,7 @@ How to use
 ========================
 1. Type <b>spotify:app:playlisttotext</b> to Spotify Search Bar
 2. Change options you need
-3. Drag&Drop any of your playlists to the drop area
+3. Drag & Drop any of your playlists to the drop area
 4. Press Select All and copy generated playlist content
 
 To do
