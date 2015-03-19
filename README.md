@@ -1,6 +1,8 @@
 Spotify Playlist to Text
 ========================
 
+!!! Spotify doesn't support applications like this anymore. This project is discontinued. !!!
+
 Exports Spotify playlists to text (Spotify App)
 
 <img src="preview_1-3-6.png">
